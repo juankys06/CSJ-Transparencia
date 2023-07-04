@@ -1,0 +1,76 @@
+.textCuston {
+  color: #19325b; }
+
+.labelCuston {
+  font-size: 1.5em; }
+
+.anchoCompleto {
+  max-width: 100% !important;
+  width: 100% !important; }
+
+.form-horizontal .control-label {
+  padding-top: 0 !important; }
+
+.btn {
+  color: white; }
+
+div.panel-group a {
+  color: #777 !important; }
+
+div.panel-group a:hover {
+  color: #333 !important;
+  text-decoration: none !important; }
+
+div.panel-group a:focus {
+  color: #333 !important;
+  text-decoration: none !important; }
+
+.list-group-item.active {
+  background-color: #d3d3d3 !important;
+  border-color: #ddd !important; }
+
+.select-option {
+  border: 0;
+  border-bottom: solid 1px #19325b !important;
+  background-image: none !important;
+  text-align-last: center;
+  text-align: center;
+  color: #808080; }
+
+input[type="text"], input[type="password"], input[type="file"], input[type="email"], select, .aui-field-input-text {
+  padding: 0 !important; }
+
+.texto-pequeno {
+  font-size: 10px; }
+
+td a i {
+  color: red; }
+
+th a i {
+  color: red; }
+
+.progreso {
+  width: 100%;
+  min-height: 100%;
+  height: auto !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  display: none; }
+
+.centroBarra {
+  position: fixed;
+  width: 20%;
+  top: 50%;
+  left: 40%; }
+
+.inputsPanel {
+  border: none;
+  border-bottom-color: currentcolor;
+  border-bottom-style: none;
+  border-bottom-width: medium;
+  box-shadow: none;
+  border-radius: 0; }
+

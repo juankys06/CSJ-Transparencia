@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.co.csj.service.service.auditoriaLocalService" class="com.co.csj.service.service.impl.auditoriaLocalServiceImpl" />
+	<bean id="com.co.csj.service.service.persistence.auditoriaPersistence" class="com.co.csj.service.service.persistence.auditoriaPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="appsportal" />
+	</bean>
+	<bean id="com.co.csj.service.service.correosLocalService" class="com.co.csj.service.service.impl.correosLocalServiceImpl" />
+	<bean id="com.co.csj.service.service.persistence.correosPersistence" class="com.co.csj.service.service.persistence.correosPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="appsportal" />
+	</bean>
+	<bean id="com.co.csj.service.service.editoresLocalService" class="com.co.csj.service.service.impl.editoresLocalServiceImpl" />
+	<bean id="com.co.csj.service.service.persistence.editoresPersistence" class="com.co.csj.service.service.persistence.editoresPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="appsportal" />
+	</bean>
+	<bean id="com.co.csj.service.service.planificacionLocalService" class="com.co.csj.service.service.impl.planificacionLocalServiceImpl" />
+	<bean id="com.co.csj.service.service.persistence.planificacionPersistence" class="com.co.csj.service.service.persistence.planificacionPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="appsportal" />
+	</bean>
+	<bean id="com.co.csj.service.service.publicacionesLocalService" class="com.co.csj.service.service.impl.publicacionesLocalServiceImpl" />
+	<bean id="com.co.csj.service.service.persistence.publicacionesPersistence" class="com.co.csj.service.service.persistence.publicacionesPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="appsportal" />
+	</bean>
+	<bean id="com.co.csj.service.service.servicioapileytransService" class="com.co.csj.service.service.impl.servicioapileytransServiceImpl" />
+	<bean id="com.co.csj.service.service.usuario_dataLocalService" class="com.co.csj.service.service.impl.usuario_dataLocalServiceImpl" />
+	<bean id="com.co.csj.service.service.persistence.usuario_dataPersistence" class="com.co.csj.service.service.persistence.usuario_dataPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="appsportal" />
+	</bean>
+</beans>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="com.co.csj.service">
+	<author>Equipo</author>
+	<namespace>ley_transparencia</namespace>
+
+	<entity name="usuario_data" table="ley_trans_funcionario_data" local-service="true" data-source="appsportal" remote-service="false" cache-enabled="false">
+		<column name="numeroDocumento" 				db-name="numero_documento" 		type="String" 	primary="true"></column>
+		<column name="tipoDocumento"				db-name="tipo_documento" 		type="String"></column>
+		<column name="nombres" 						type="String"></column>
+		<column name="apellidos" 					type="String"></column>
+		<column name="cargo" 						type="String"></column>
+		<column name="fechaRegistro" 				db-name="fecha_registro" 		type="Date"></column>
+		<column name="fechaModificacion" 			db-name="fecha_modificacion" 	type="Date"></column>
+		<column name="datos_personales" 			type="String"></column>
+		<column name="despacho" 					type="String"></column>
+		<column name="formacion_academica" 			type="String"></column>
+		<column name="experiencia_laboral" 			type="String"></column>
+		<column name="tiempo_experiencia" 			type="String"></column>
+		<column name="bienes_y_rentas" 				type="String"></column>
+		<column name="informacion_complementaria" 	type="String"></column>
+		<column name="conflicto_intereses" 			type="String"></column>
+		<column name="archivo_declaracion_renta" 	type="String"></column>
+		<column name="archivo_formulario_bienes" 	type="String"></column>
+		<column name="archivo_hoja_vida" 			type="String"></column>
+		<column name="porcentaje_dp" 				type="double"></column>
+		<column name="porcentaje_fa" 				type="double"></column>
+		<column name="porcentaje_el" 				type="double"></column>
+		<column name="porcentaje_te" 				type="double"></column>
+		<column name="porcentaje_br" 				type="double"></column>
+		<column name="porcentaje_ic" 				type="double"></column>
+		<column name="porcentaje_ci" 				type="double"></column>
+		<column name="retirado" 					type="String"></column>
+	</entity>
+	
+	<entity name="publicaciones" table="ley_trans_publicaciones" local-service="true" remote-service="false" data-source="appsportal" cache-enabled="true">
+	 	<column name="id" 							db-name="id" 					type="long" primary="true" id-type="identity"></column>
+	 	<column name="fk_usuario" 					type="String"></column>
+	 	<column name="despacho_usuario" 			type="String"></column>
+	 	<column name="archivo_hoja_vida" 			type="String"></column>
+	 	<column name="archivo_declaracion_renta" 	type="String"></column>
+	 	<column name="archivo_formulario_bienes" 	type="String"></column>
+	 	<column name="fecha_solicitud" 				type="Date"></column>
+	 	<column name="fecha_publicacion" 			type="Date"></column>
+	 	<column name="aprobado_por" 				type="String"></column>
+	 	<column name="fecha_negado" 				type="Date"></column>
+	 	<column name="negado_por" 					type="String"></column>
+	 	<column name="anhio_publicacion" 			type="int"></column>
+	 	<column name="fecha_modificado" 			type="Date"></column>
+	 	<column name="estatus" 						type="String"></column>
+	 	<column name="causa_negado" 				type="String"></column>
+	 	<column name="cargo" 						type="String"></column>
+	 	<column name="retirado" 					type="String"></column>
+	 	
+	 	<finder return-type="publicaciones" name="PorEstadoUsuario">
+	 		<finder-column name="fk_usuario" ></finder-column>
+	 		<finder-column name="anhio_publicacion"></finder-column>
+	 		<finder-column name="estatus"></finder-column>
+	 	</finder>
+	 	
+	 	<finder return-type="Collection" name="PorEstadoSolicitudes">
+	 		<finder-column name="estatus"></finder-column>
+	 		<finder-column name="anhio_publicacion"></finder-column>
+	 	</finder>
+	</entity>
+	
+	<entity name="editores" table="ley_trans_usuarios" remote-service="false" local-service="true" cache-enabled="false" data-source="appsportal">
+		<column name="id" 						db-name="id"	type="long" primary="true" id-type="identity"></column>
+		<column name="correo" 					type="String"></column>
+		<column name="codigo" 					type="String"></column>
+		<column name="fecha_creado" 			type="Date"></column>
+		<column name="fecha_modificado" 		type="Date"></column>
+		<column name="ultimo_inicio" 			type="Date"></column>
+		<column name="nombres_edita" 			type="String"></column>
+		<column name="apellidos_edita" 			type="String"></column>
+		<column name="numero_documento_edita" 	type="String"></column>
+		<column name="tipo_documento_edita" 	type="String"></column>
+		<column name="cargo_edita" 				type="String"></column>
+		<column name="despacho_edita" 			type="String"></column>
+		<column name="userid" 					type="String"></column>
+		
+		<finder return-type="editores" name="PorCorreo">
+			<finder-column name="correo"></finder-column>
+		</finder>
+		<finder return-type="editores" name="PorUserid">
+			<finder-column name="userid"></finder-column>
+		</finder>
+	</entity>
+	
+	<entity name="planificacion" table="ley_trans_planificacion_anio" remote-service="false" local-service="true" cache-enabled="true" data-source="appsportal">
+		<column name="id" 					db-name="id"	type="long" primary="true" id-type="identity"></column>
+		<column name="anhio" 				type="int"></column>
+		<column name="fecha_inicio" 		type="Date"></column>
+		<column name="fecha_fin" 			type="Date"></column>
+		<column name="usuario_finalizo" 	type="String"></column>
+		<column name="estado"			 	type="String"></column>
+		
+		<finder return-type="planificacion" name="PorEstado">
+			<finder-column name="estado"></finder-column>
+		</finder>
+	</entity>
+	
+	<entity name="correos" table="ley_trans_correos_depurado" remote-service="false" local-service="true" data-source="appsportal" cache-enabled="true">
+		<column name="id"					db-name="id" 			type="long"	primary="true" id-type="identity"></column>
+		<column name="cuentaCorreo" 		db-name="CuentaCorreo"	type="String"></column>
+		<column name="nombre1"				type="String" ></column>
+		<column name="apellido" 			type="String"></column>
+		<column name="cargo" 				type="String"></column>
+		<column name="cedulaResponsable" 	type="String"></column>
+		<column name="codigoDespacho" 		type="String"></column>
+		
+		<finder return-type="correos" name="PorCorreo">
+			<finder-column name="cuentaCorreo"></finder-column>
+		</finder>
+		
+		<finder return-type="correos" name="PorCorreoCedula">
+			<finder-column name="cuentaCorreo"></finder-column>
+			<finder-column name="cedulaResponsable"></finder-column>
+		</finder>
+	</entity>
+	
+	<entity name="auditoria" table="ley_trans_auditoria" local-service="true" remote-service="false" cache-enabled="true" data-source="appsportal">
+		<column name="id" 					db-name="id" type="long" primary="true" id-type="identity"></column>
+		<column name="modificado_por" 		type="String"></column>
+		<column name="accion" 				type="String"></column>
+		<column name="campo_modifico" 		type="String"></column>
+		<column name="fecha" 				type="Date"></column>
+		<column name="ano_vigencia" 		type="int"></column>
+		<column name="cedula_funcionario" 	type="String"></column>
+		<column name="log_anterior" 		type="String"></column>
+		<column name="log_nuevo" 			type="String"></column>
+		
+		<order by="desc" >
+			<order-column name="fecha" order-by="desc"></order-column>
+		</order>
+	</entity>
+	
+	<entity name="servicioapileytrans" remote-service="true" local-service="false" json-enabled="true">
+	</entity>
+	
+</service-builder>

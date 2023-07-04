@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.co.csj.service.model.auditoria">
+		<field name="id" type="long" />
+		<field name="modificado_por" type="String" />
+		<field name="accion" type="String" />
+		<field name="campo_modifico" type="String" />
+		<field name="fecha" type="Date" />
+		<field name="ano_vigencia" type="int" />
+		<field name="cedula_funcionario" type="String" />
+		<field name="log_anterior" type="String" />
+		<field name="log_nuevo" type="String" />
+	</model>
+	<model name="com.co.csj.service.model.correos">
+		<field name="id" type="long" />
+		<field name="cuentaCorreo" type="String" />
+		<field name="nombre1" type="String" />
+		<field name="apellido" type="String" />
+		<field name="cargo" type="String" />
+		<field name="cedulaResponsable" type="String" />
+		<field name="codigoDespacho" type="String" />
+	</model>
+	<model name="com.co.csj.service.model.editores">
+		<field name="id" type="long" />
+		<field name="correo" type="String" />
+		<field name="codigo" type="String" />
+		<field name="fecha_creado" type="Date" />
+		<field name="fecha_modificado" type="Date" />
+		<field name="ultimo_inicio" type="Date" />
+		<field name="nombres_edita" type="String" />
+		<field name="apellidos_edita" type="String" />
+		<field name="numero_documento_edita" type="String" />
+		<field name="tipo_documento_edita" type="String" />
+		<field name="cargo_edita" type="String" />
+		<field name="despacho_edita" type="String" />
+		<field name="userid" type="String" />
+	</model>
+	<model name="com.co.csj.service.model.planificacion">
+		<field name="id" type="long" />
+		<field name="anhio" type="int" />
+		<field name="fecha_inicio" type="Date" />
+		<field name="fecha_fin" type="Date" />
+		<field name="usuario_finalizo" type="String" />
+		<field name="estado" type="String" />
+	</model>
+	<model name="com.co.csj.service.model.publicaciones">
+		<field name="id" type="long" />
+		<field name="fk_usuario" type="String" />
+		<field name="despacho_usuario" type="String" />
+		<field name="archivo_hoja_vida" type="String" />
+		<field name="archivo_declaracion_renta" type="String" />
+		<field name="archivo_formulario_bienes" type="String" />
+		<field name="fecha_solicitud" type="Date" />
+		<field name="fecha_publicacion" type="Date" />
+		<field name="aprobado_por" type="String" />
+		<field name="fecha_negado" type="Date" />
+		<field name="negado_por" type="String" />
+		<field name="anhio_publicacion" type="int" />
+		<field name="fecha_modificado" type="Date" />
+		<field name="estatus" type="String" />
+		<field name="causa_negado" type="String" />
+		<field name="cargo" type="String" />
+		<field name="retirado" type="String" />
+	</model>
+	<model name="com.co.csj.service.model.usuario_data">
+		<field name="numeroDocumento" type="String" />
+		<field name="tipoDocumento" type="String" />
+		<field name="nombres" type="String" />
+		<field name="apellidos" type="String" />
+		<field name="cargo" type="String" />
+		<field name="fechaRegistro" type="Date" />
+		<field name="fechaModificacion" type="Date" />
+		<field name="datos_personales" type="String" />
+		<field name="despacho" type="String" />
+		<field name="formacion_academica" type="String" />
+		<field name="experiencia_laboral" type="String" />
+		<field name="tiempo_experiencia" type="String" />
+		<field name="bienes_y_rentas" type="String" />
+		<field name="informacion_complementaria" type="String" />
+		<field name="conflicto_intereses" type="String" />
+		<field name="archivo_declaracion_renta" type="String" />
+		<field name="archivo_formulario_bienes" type="String" />
+		<field name="archivo_hoja_vida" type="String" />
+		<field name="porcentaje_dp" type="double" />
+		<field name="porcentaje_fa" type="double" />
+		<field name="porcentaje_el" type="double" />
+		<field name="porcentaje_te" type="double" />
+		<field name="porcentaje_br" type="double" />
+		<field name="porcentaje_ic" type="double" />
+		<field name="porcentaje_ci" type="double" />
+		<field name="retirado" type="String" />
+	</model>
+</model-hints>

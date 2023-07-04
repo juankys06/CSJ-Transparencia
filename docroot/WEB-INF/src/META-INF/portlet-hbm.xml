@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.co.csj.service.model.auditoria" />
+	<import class="com.co.csj.service.model.correos" />
+	<import class="com.co.csj.service.model.editores" />
+	<import class="com.co.csj.service.model.planificacion" />
+	<import class="com.co.csj.service.model.publicaciones" />
+	<import class="com.co.csj.service.model.servicioapileytrans" />
+	<import class="com.co.csj.service.model.usuario_data" />
+	<class name="com.co.csj.service.model.impl.auditoriaImpl" table="ley_trans_auditoria">
+		<cache usage="read-write" />
+		<id name="id" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="modificado_por" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="accion" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="campo_modifico" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fecha" type="org.hibernate.type.TimestampType" />
+		<property name="ano_vigencia" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="cedula_funcionario" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="log_anterior" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="log_nuevo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.co.csj.service.model.impl.correosImpl" table="ley_trans_correos_depurado">
+		<cache usage="read-write" />
+		<id name="id" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="cuentaCorreo" type="com.liferay.portal.dao.orm.hibernate.StringType" column="CuentaCorreo" />
+		<property name="nombre1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="apellido" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cargo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cedulaResponsable" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="codigoDespacho" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.co.csj.service.model.impl.editoresImpl" table="ley_trans_usuarios">
+		<id name="id" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="correo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="codigo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fecha_creado" type="org.hibernate.type.TimestampType" />
+		<property name="fecha_modificado" type="org.hibernate.type.TimestampType" />
+		<property name="ultimo_inicio" type="org.hibernate.type.TimestampType" />
+		<property name="nombres_edita" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="apellidos_edita" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="numero_documento_edita" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tipo_documento_edita" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cargo_edita" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="despacho_edita" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="userid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.co.csj.service.model.impl.planificacionImpl" table="ley_trans_planificacion_anio">
+		<cache usage="read-write" />
+		<id name="id" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="anhio" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="fecha_inicio" type="org.hibernate.type.TimestampType" />
+		<property name="fecha_fin" type="org.hibernate.type.TimestampType" />
+		<property name="usuario_finalizo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="estado" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.co.csj.service.model.impl.publicacionesImpl" table="ley_trans_publicaciones">
+		<cache usage="read-write" />
+		<id name="id" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="fk_usuario" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="despacho_usuario" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="archivo_hoja_vida" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="archivo_declaracion_renta" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="archivo_formulario_bienes" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fecha_solicitud" type="org.hibernate.type.TimestampType" />
+		<property name="fecha_publicacion" type="org.hibernate.type.TimestampType" />
+		<property name="aprobado_por" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fecha_negado" type="org.hibernate.type.TimestampType" />
+		<property name="negado_por" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="anhio_publicacion" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="fecha_modificado" type="org.hibernate.type.TimestampType" />
+		<property name="estatus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="causa_negado" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cargo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="retirado" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.co.csj.service.model.impl.usuario_dataImpl" table="ley_trans_funcionario_data">
+		<id name="numeroDocumento" column="numero_documento" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="tipoDocumento" type="com.liferay.portal.dao.orm.hibernate.StringType" column="tipo_documento" />
+		<property name="nombres" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="apellidos" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cargo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fechaRegistro" type="org.hibernate.type.TimestampType" column="fecha_registro" />
+		<property name="fechaModificacion" type="org.hibernate.type.TimestampType" column="fecha_modificacion" />
+		<property name="datos_personales" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="despacho" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="formacion_academica" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="experiencia_laboral" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tiempo_experiencia" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="bienes_y_rentas" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="informacion_complementaria" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="conflicto_intereses" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="archivo_declaracion_renta" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="archivo_formulario_bienes" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="archivo_hoja_vida" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="porcentaje_dp" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="porcentaje_fa" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="porcentaje_el" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="porcentaje_te" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="porcentaje_br" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="porcentaje_ic" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="porcentaje_ci" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="retirado" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

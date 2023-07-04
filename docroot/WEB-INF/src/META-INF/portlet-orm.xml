@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.co.csj.service.model.impl.auditoriaModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="modificado_por" />
+			<basic name="accion" />
+			<basic name="campo_modifico" />
+			<basic name="fecha">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ano_vigencia" />
+			<basic name="cedula_funcionario" />
+			<basic name="log_anterior" />
+			<basic name="log_nuevo" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.co.csj.service.model.impl.correosModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="cuentaCorreo">
+				<column name="CUENTACORREO" />
+			</basic>
+			<basic name="nombre1" />
+			<basic name="apellido" />
+			<basic name="cargo" />
+			<basic name="cedulaResponsable" />
+			<basic name="codigoDespacho" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.co.csj.service.model.impl.editoresModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="correo" />
+			<basic name="codigo" />
+			<basic name="fecha_creado">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="fecha_modificado">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ultimo_inicio">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nombres_edita" />
+			<basic name="apellidos_edita" />
+			<basic name="numero_documento_edita" />
+			<basic name="tipo_documento_edita" />
+			<basic name="cargo_edita" />
+			<basic name="despacho_edita" />
+			<basic name="userid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.co.csj.service.model.impl.planificacionModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="anhio" />
+			<basic name="fecha_inicio">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="fecha_fin">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="usuario_finalizo" />
+			<basic name="estado" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.co.csj.service.model.impl.publicacionesModelImpl">
+		<attributes>
+			<id name="id" />
+			<basic name="fk_usuario" />
+			<basic name="despacho_usuario" />
+			<basic name="archivo_hoja_vida" />
+			<basic name="archivo_declaracion_renta" />
+			<basic name="archivo_formulario_bienes" />
+			<basic name="fecha_solicitud">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="fecha_publicacion">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="aprobado_por" />
+			<basic name="fecha_negado">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="negado_por" />
+			<basic name="anhio_publicacion" />
+			<basic name="fecha_modificado">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="estatus" />
+			<basic name="causa_negado" />
+			<basic name="cargo" />
+			<basic name="retirado" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.co.csj.service.model.impl.usuario_dataModelImpl">
+		<attributes>
+			<id name="numeroDocumento">
+				<column name="NUMERO_DOCUMENTO" />
+			</id>
+			<basic name="tipoDocumento">
+				<column name="TIPO_DOCUMENTO" />
+			</basic>
+			<basic name="nombres" />
+			<basic name="apellidos" />
+			<basic name="cargo" />
+			<basic name="fechaRegistro">
+				<column name="FECHA_REGISTRO" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="fechaModificacion">
+				<column name="FECHA_MODIFICACION" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="datos_personales" />
+			<basic name="despacho" />
+			<basic name="formacion_academica" />
+			<basic name="experiencia_laboral" />
+			<basic name="tiempo_experiencia" />
+			<basic name="bienes_y_rentas" />
+			<basic name="informacion_complementaria" />
+			<basic name="conflicto_intereses" />
+			<basic name="archivo_declaracion_renta" />
+			<basic name="archivo_formulario_bienes" />
+			<basic name="archivo_hoja_vida" />
+			<basic name="porcentaje_dp" />
+			<basic name="porcentaje_fa" />
+			<basic name="porcentaje_el" />
+			<basic name="porcentaje_te" />
+			<basic name="porcentaje_br" />
+			<basic name="porcentaje_ic" />
+			<basic name="porcentaje_ci" />
+			<basic name="retirado" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.co.csj.service.model.impl.auditoriaImpl" name="auditoria">
+		<table name="ley_trans_auditoria" />
+		<attributes />
+	</entity>
+	<entity class="com.co.csj.service.model.impl.correosImpl" name="correos">
+		<table name="ley_trans_correos_depurado" />
+		<attributes />
+	</entity>
+	<entity class="com.co.csj.service.model.impl.editoresImpl" name="editores">
+		<table name="ley_trans_usuarios" />
+		<attributes />
+	</entity>
+	<entity class="com.co.csj.service.model.impl.planificacionImpl" name="planificacion">
+		<table name="ley_trans_planificacion_anio" />
+		<attributes />
+	</entity>
+	<entity class="com.co.csj.service.model.impl.publicacionesImpl" name="publicaciones">
+		<table name="ley_trans_publicaciones" />
+		<attributes />
+	</entity>
+	<entity class="com.co.csj.service.model.impl.usuario_dataImpl" name="usuario_data">
+		<table name="ley_trans_funcionario_data" />
+		<attributes />
+	</entity>
+</entity-mappings>

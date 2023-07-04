@@ -1,0 +1,165 @@
+.textCuston{
+	color: #19325b;	
+}
+
+.labelCuston{
+	font-size: 1.5em;
+}
+
+.anchoCompleto{
+	max-width: 100% !important;
+	width: 100% !important;
+}
+
+.form-horizontal .control-label{
+	padding-top: 0 !important;
+}
+
+.btn{
+	color: white;
+}
+
+div.panel-group  a{
+	color: #777 !important;
+}
+
+div.panel-group  a:hover{
+	color: #333 !important;
+	text-decoration: none !important;
+}
+
+div.panel-group  a:focus{
+	color: #333 !important;
+	text-decoration: none !important;
+}
+
+.list-group-item.active{
+	background-color: #d3d3d3 !important;
+	border-color: #ddd !important;
+}
+
+.select-option {
+    border: 0;
+    border-bottom: solid 1px #19325b !important;
+    background-image: none !important;
+    text-align-last: center;
+    text-align: center;
+    color: #808080;
+}
+input[type="text"], input[type="password"], input[type="file"], input[type="email"], select, .aui-field-input-text {
+	padding: 0 !important;
+}
+.texto-pequeno{
+	font-size: 10px;
+}
+td a i{
+	color: red;
+}
+th a i{
+	color: red;
+}
+
+.progreso{
+	width: 100%;
+	min-height: 100%;
+	height: auto !important;
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 1000;
+	background: rgba(0,0,0,0.5);
+	display: none;
+}
+
+.centroBarra{
+	position: fixed;
+	width: 20%;
+	top: 50%;
+	left: 40%;
+}
+
+.inputsPanel{
+	border: none;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+	box-shadow: none;
+	border-radius: 0;
+}
+
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width:auto;
+    padding:0 10px;
+    border-bottom:none;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 21px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: green;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.checkSlider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .checkSlider {
+  background-color: red;
+}
+
+input:focus + .checkSlider {
+  box-shadow: 0 0 1px red;
+}
+
+input:checked + .checkSlider:before {
+  -webkit-transform: translateX(38px);
+  -ms-transform: translateX(38px);
+  transform: translateX(38px);
+}
+
+/* Rounded sliders */
+.checkSlider.round {
+  border-radius: 34px;
+}
+
+.checkSlider.round:before {
+  border-radius: 50%;
+}
